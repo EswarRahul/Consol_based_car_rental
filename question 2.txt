@@ -1,0 +1,30 @@
+2.Repeated Salary Count
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner rahul=new Scanner(System.in);
+        int n=rahul.nextInt();
+        if (n < 0) 
+        {
+            System.out.println("invalid input");
+            return;
+        }
+        Set<Integer>numbers=new HashSet<>();
+        for (int i=0;i<n;i++) 
+        {
+            int num=rahul.nextInt();
+            if (num<0) 
+            {
+                System.out.println("invalid input");
+                return;
+            }
+            numbers.add(num);
+        }
+        System.out.println(numbers.size());
+    }
+}
