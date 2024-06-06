@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner rahul=new Scanner(System.in);
+        int a=rahul.nextInt(),b=rahul.nextInt(),op=rahul.nextInt();
+        int res=(a<0||b<0||a>32767||b>32767||op<1||op>4||(op==4&&b==0))?-1:(op==1)?a+b:(op==2)?a-b:(op==3)?a*b:a/b;
+        System.out.println(res==-1?"invalid Input":res);
+    }
+}
