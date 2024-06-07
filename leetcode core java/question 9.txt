@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner rahul=new Scanner(System.in);
+        int n=rahul.nextInt();
+        if (n<0) 
+        {
+            System.out.println("invalid array size");
+            return;
+        }
+        int[] array=new int[n];
+        for (int i=0;i<n;i++) 
+        {
+            array[i]=rahul.nextInt();
+            if (array[i]<0) 
+            {
+                System.out.println("invalid input");
+                return;
+            }
+        }
+        int value=rahul.nextInt();
+        for (int i=0;i<n;i+=2) 
+        {
+            if (array[i+1]==value) 
+            {
+                System.out.println(array[i]);
+            }
+        }
+        if (n==0) 
+        {
+            System.out.println("key not found");
+        }
+    }
+}
