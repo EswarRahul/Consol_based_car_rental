@@ -1,0 +1,10 @@
+select first_name as worker_name from worker;
+select upper(first_name) from worker;
+select distinct department from worker;
+select left(first_name, 3) from worker;
+select instr(first_name, 'a') from worker where first_name = 'amitabh';
+select rtrim(first_name) from worker;
+select ltrim(department) from worker;
+select department, length(department) from (select distinct department from worker) as departments;
+select replace(first_name, 'a', 'a') from worker;
+select concat(first_name, ' ', last_name) as complete_name from worker;

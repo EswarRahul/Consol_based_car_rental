@@ -1,0 +1,10 @@
+select now();
+select * from worker limit 10;
+select distinct salary from worker order by salary desc limit 4, 1;
+select distinct salary from worker w1 where 5 = (select count(distinct salary) from worker w2 where w2.salary >= w1.salary);
+select salary, group_concat(first_name) as employees_with_same_salary from worker group by salary having count(*) > 1;
+select distinct salary from worker order by salary desc limit 1, 1;
+select * from worker union all select * from worker limit 1;
+select * from worker w join bonus b on w.worker_id = b.worker_ref_id;
+select * from worker where worker_id <= (select count(*)/2 from worker);
+select department from worker group by department having count(*) < 5;

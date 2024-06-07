@@ -1,0 +1,10 @@
+select count(*) from worker where department = 'admin';
+select first_name, last_name from worker where salary > 50000 and salary <= 100000;
+select department, count(*) as num_workers from worker group by department order by num_workers desc;
+select w.*from worker w join title t on w.worker_id = t.worker_ref_id where t.worker_title = 'manager';
+select * from worker w1 inner join worker w2 on w1.worker_id < w2.worker_id and w1.first_name = w2.first_name and w1.last_name = w2.last_name;
+select * from worker where mod(worker_id, 2) <> 0;
+select * from worker where mod(worker_id, 2) = 0;
+create table worker_clone like worker;insert into worker_clone select * from worker;
+select * from worker w join bonus b on w.worker_id = b.worker_ref_id;
+select * from worker where worker_id not in (select worker_id from bonus);
